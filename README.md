@@ -45,17 +45,17 @@ JMeter can be started in 3 modes.
 * Server Mode
 
 ## Start JMeter in GUI Mode
-***You should use CLI mode (NON GUI) to start your test.*** Use GUI to create and debug tests.
+***You should use CLI mode (NON-GUI) to start your test.*** Use GUI to create and debug tests.
 
 To start JMeter in Windows you just need to run file ***<jmeter_installation_folder>/bin/jmeter.bat***.
 ![start-jmeter-in-windows.gif](start-jmeter-in-windows.gif)
 
-## Start JMeter in Command Line Mode
-To start JMeter test in command line you can use following command:
+## Start JMeter in Command-Line Mode
+To start the JMeter test in the command line you can use the following command:
 jmeter -n -t *[jmx_test_file.jmx]* -l *[log_file.log]*
 
 Example:
-> jmeter -n -t .\example.jmx -l logfile.log
+> jmeter -n -t ./example.jmx -l logfile.log
 
 Result of above command:
 ```
@@ -78,12 +78,12 @@ Tidying up ...    @ Mon Jan 20 10:41:09 CET 2020 (1579513269309)
 To start JMeter in Server Mode use ***<jmeter_installation_folder>/bin/jmeter-server.bat***
 
 Also you can use command:
-> jmeter -n -t .\example.jmx -l logfile.log -H 127.0.0.1 -P 8080
+> jmeter -n -t ./example.jmx -l logfile.log -H 127.0.0.1 -P 8080
 
 to distribute test(s) to other servers.
 
 # Simple test plan - step by step (HTTP)
-In this example I will use example api https://petstore.swagger.io/ 
+In this example, I will use example API https://petstore.swagger.io/ 
 1. JMeter started ![jmeter-SimpleTestPlan-StepByStep-01.png](examples\01-hello-jmeter\jmeter-SimpleTestPlan-StepByStep-01.png)
 2. In `Test Plan` set name `Hello JMeter`
 3. Click right mouse button on test plan and select `Add` -> `Threads (Users)` -> `Thread Group`
@@ -115,8 +115,8 @@ In this example I will use example api https://petstore.swagger.io/
       3. `Graph Results` and in `Filename` set `~/report/graphResults.xml`
 8. Project is ready to run
 
-## Execute prepared test plan
-***You should use CLI mode (NON GUI) to start your test.***
+## Execute a prepared test plan
+***You should use CLI mode (NON-GUI) to start your test.***
 
 ### For debug purposes test plan can be run from GUI.
 Results:
@@ -124,8 +124,8 @@ Results:
 ![jmeter-SimpleTestPlan-StepByStep-06.png](examples\01-hello-jmeter\jmeter-SimpleTestPlan-StepByStep-06.png)
 ![jmeter-SimpleTestPlan-StepByStep-07.png](examples\01-hello-jmeter\jmeter-SimpleTestPlan-StepByStep-07.png)
 
-### Command line execute
-> jmeter -n -t .\hello-jmeter.jmx -l logfile.log
+### Command-line execute
+> jmeter -n -t ./hello-jmeter.jmx -l logfile.log
 
 Result
 ```
