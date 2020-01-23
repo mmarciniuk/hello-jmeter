@@ -84,14 +84,14 @@ to distribute test(s) to other servers.
 
 # Simple test plan - step by step (HTTP)
 In this example I will use example api https://petstore.swagger.io/ 
-1. JMeter started ![jmeter-SimpleTestPlan-StepByStep-01.png](jmeter-SimpleTestPlan-StepByStep-01.png)
+1. JMeter started ![jmeter-SimpleTestPlan-StepByStep-01.png](examples\01-hello-jmeter\jmeter-SimpleTestPlan-StepByStep-01.png)
 2. In `Test Plan` set name `Hello JMeter`
 3. Click right mouse button on test plan and select `Add` -> `Threads (Users)` -> `Thread Group`
    1. Set `Name` to `Hello JMeter Thread Group`
    2. Set `Number of Threads (users)` to `10`
    3. Set `Loop Count` to `50`
    4. Uncheck `Same user on each iteration`
-   5. Result ![jmeter-SimpleTestPlan-StepByStep-02.png](jmeter-SimpleTestPlan-StepByStep-02.png)
+   5. Result ![jmeter-SimpleTestPlan-StepByStep-02.png](examples\01-hello-jmeter\jmeter-SimpleTestPlan-StepByStep-02.png)
 4. Click right mouse button on thread group and select `Add` -> `Sampler` -> `HTTP Request`
    1. Set `Name` to `Petstore - Add a new pet to the store`
    2. Set `Protocol` to `http`
@@ -101,13 +101,13 @@ In this example I will use example api https://petstore.swagger.io/
    6. Set `Path` to `/v2/pet`
    7. Uncheck `Follow Redirects` and `Use KeepAlive`
    8. Set `Body Data` to `{"id": 0,"category": {"id": 0,"name": "string"},"name": "doggie","photoUrls": ["string"],"tags": [{"id": 0,"name": "string"}],"status": "available"}`
-   9. Result ![jmeter-SimpleTestPlan-StepByStep-03.png](jmeter-SimpleTestPlan-StepByStep-03.png)
+   9. Result ![jmeter-SimpleTestPlan-StepByStep-03.png](examples\01-hello-jmeter\jmeter-SimpleTestPlan-StepByStep-03.png)
 5. Click right mouse button on added `HTTP Request` and select `Add` -> `Config Element` -> `HTTP Cookie Manager`
 6. Click right mouse button on added `HTTP Request` and select `Add` -> `Config Element` -> `HTTP Header Manager`
    1. Add headers:
       1. accept: application/json
       2. Content-Type: application/json
-   2. Result ![jmeter-SimpleTestPlan-StepByStep-04.png](jmeter-SimpleTestPlan-StepByStep-04.png)
+   2. Result ![jmeter-SimpleTestPlan-StepByStep-04.png](examples\01-hello-jmeter\jmeter-SimpleTestPlan-StepByStep-04.png)
 7. Click right mouse button on added `HTTP Request` and select `Add` -> `Listener`:
    1. Add:
       1. `View Results Tree` and in field `Filename` set `~/report/viewResultsTree.xml`
@@ -120,9 +120,9 @@ In this example I will use example api https://petstore.swagger.io/
 
 ### For debug purposes test plan can be run from GUI.
 Results:
-![jmeter-SimpleTestPlan-StepByStep-05.png](jmeter-SimpleTestPlan-StepByStep-05.png)
-![jmeter-SimpleTestPlan-StepByStep-06.png](jmeter-SimpleTestPlan-StepByStep-06.png)
-![jmeter-SimpleTestPlan-StepByStep-07.png](jmeter-SimpleTestPlan-StepByStep-07.png)
+![jmeter-SimpleTestPlan-StepByStep-05.png](examples\01-hello-jmeter\jmeter-SimpleTestPlan-StepByStep-05.png)
+![jmeter-SimpleTestPlan-StepByStep-06.png](examples\01-hello-jmeter\jmeter-SimpleTestPlan-StepByStep-06.png)
+![jmeter-SimpleTestPlan-StepByStep-07.png](examples\01-hello-jmeter\jmeter-SimpleTestPlan-StepByStep-07.png)
 
 ### Command line execute
 > jmeter -n -t .\hello-jmeter.jmx -l logfile.log
